@@ -15,9 +15,9 @@ public void openMainPage(){
 }
 
 public void searchForRepository (String repository){
-    $(".header-search-input").click();
-    $(".header-search-input").setValue("eroshenkoam/allure-example");
-    $(".header-search-input").submit();
+    $(".search-input-container").click();
+    $("[id='query-builder-test']").sendKeys("eroshenkoam/allure-example");
+    $("[id='query-builder-test']").submit();
 }
 
 public void openRepositoryLink(String REPOSITORY){
@@ -25,7 +25,7 @@ public void openRepositoryLink(String REPOSITORY){
 }
 
     public void openIssueTab() {
-        $(partialLinkText("Issues")).click();
+        $("#issues-tab").click();;
     }
 
     public void checkIssueWithName(Integer issueNumber) {

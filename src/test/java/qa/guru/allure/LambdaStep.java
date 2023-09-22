@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.partialLinkText;
 public class LambdaStep {
 
     private final String REPOSITORY = "eroshenkoam/allure-example";
-    private final Integer issueNumber = 1;
+    private final Integer issueNumber = 80;
 
 
     @Test
@@ -25,15 +25,15 @@ public class LambdaStep {
             open("https://github.com/");
         });
         step("Ищем репозиторий по имени " + REPOSITORY, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").setValue(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".search-input-container").click();
+            $("[id='query-builder-test']").setValue(REPOSITORY);
+            $("[id='query-builder-test']").submit();
         });
         step("В результатах поиска кликаем по ссылке репозитория " + REPOSITORY, () -> {
             $(linkText("eroshenkoam/allure-example")).click();
         });
         step("Кликаем на Issues", () -> {
-            $(partialLinkText("Issues")).click();
+            $("#issues-tab").click();
         });
         step("Проверяем что существует Issue с номером " + issueNumber, () -> {
             $(withText("#" + issueNumber)).should(Condition.exist);

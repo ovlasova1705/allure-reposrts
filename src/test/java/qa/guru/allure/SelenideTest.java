@@ -26,12 +26,12 @@ public class SelenideTest {
 
         open("https://github.com");
 
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-input").submit();
+        $(".search-input-container").click();
+        $("[id='query-builder-test']").sendKeys("eroshenkoam/allure-example");
+        $("[id='query-builder-test']").submit();
 
         $(linkText("eroshenkoam/allure-example")).click();
-        $(partialLinkText("Issues")).click();
-        $(withText("#1")).should(Condition.exist);
+        $("#issues-tab").click();
+        $(withText("#80")).should(Condition.exist);
     }
 }

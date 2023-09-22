@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class AnnotatedStep {
     private final String REPOSITORY = "eroshenkoam/allure-example";
-    private final Integer issueNumber = 1;
+    private final Integer issueNumber = 80;
 
     @Test
     void annotatedStep() {
